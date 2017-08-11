@@ -2,6 +2,12 @@ var gulp = require('gulp');
 var BuildTask = require('carbon-factory/lib/gulp/build').default;
 var SpecTask = require('carbon-factory/lib/gulp/spec').default;
 
-gulp.task('default', BuildTask());
+var opts = {
+  jsDest: './../app/assets/javascripts',
+  cssDest: './../app/assets/stylesheets',
+  fontDest: './../app/assets/fonts/fonts'
+};
+
+gulp.task('default', BuildTask(opts));
 
 gulp.task('test', SpecTask());
